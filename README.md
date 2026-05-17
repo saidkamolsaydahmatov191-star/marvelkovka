@@ -1,20 +1,72 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Marvel Kovka - Uzbek Metalwork Company
 
-# Run and deploy your AI Studio app
+Modern website for Marvel Kovka, a professional metalwork and forging company in Uzbekistan.
 
-This contains everything you need to run your app locally.
+## Built With
 
-View your app in AI Studio: https://ai.studio/apps/d446ec47-4e91-4826-b6e3-e9d81bb114de
+- **Frontend**: React 19 + TypeScript + Vite
+- **Styling**: Tailwind CSS
+- **Animations**: Motion (Framer Motion alternative)
+- **Database**: Firebase
+- **Backend**: Express.js
 
-## Run Locally
+## Prerequisites
 
-**Prerequisites:**  Node.js
+- Node.js 16+
+- npm or yarn
 
+## Installation & Setup
 
 1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+   ```bash
+   npm install
+   ```
+
+2. Set environment variables in `.env.local` (if needed for Firebase):
+   ```env
+   # Your Firebase config here if needed
+   ```
+
+3. Run locally:
+   ```bash
+   npm run dev
+   ```
+   The app will be available at `http://localhost:3000`
+
+## Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+## Features
+
+- ✨ Modern, responsive design
+- 🎬 Smooth animations and transitions
+- 🖼️ Gallery and portfolio showcase
+- 👥 Team section
+- 📋 Service categories
+- 💼 Career opportunities
+- 📞 Contact information
+- 🌐 Multi-language support
+
+## Project Structure
+
+- `App.tsx` - Main application component
+- `*.tsx` - Individual page components (About, Gallery, Team, etc.)
+- `main.tsx` - Application entry point
+- `constants.ts` - Application constants
+- `types.ts` - TypeScript type definitions
+- `firebase.ts` - Firebase configuration
+
+## Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production
+- `npm run preview` - Preview production build
+- `npm run lint` - TypeScript type checking
+
+## License
+
+All rights reserved © Marvel Kovka
