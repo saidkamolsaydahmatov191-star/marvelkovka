@@ -1,0 +1,44 @@
+{
+  "entities": {
+    "submission": {
+      "title": "Submission",
+      "description": "A contact form submission",
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the sender"
+        },
+        "phone": {
+          "type": "string",
+          "description": "The phone number of the sender"
+        },
+        "service": {
+          "type": "string",
+          "description": "The type of service requested"
+        },
+        "message": {
+          "type": "string",
+          "description": "The message content"
+        },
+        "createdAt": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the submission was created"
+        },
+        "status": {
+          "type": "string",
+          "enum": ["pending", "viewed", "archived"],
+          "description": "The status of the submission"
+        }
+      },
+      "required": ["name", "phone", "service", "message", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/submissions/{submissionId}": {
+      "schema": "submission",
+      "description": "Collection of contact form submissions"
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Marvel Kovka",
+  "description": "Premium wrought iron and metal forging services in Uzbekistan. Showcasing elegant gates, fences, and custom metalwork.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

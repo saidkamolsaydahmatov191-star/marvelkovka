@@ -1,0 +1,49 @@
+import { motion } from 'motion/react';
+import { WORKERS } from '../constants';
+
+export default function Team() {
+  return (
+    <section id="team" className="py-24 bg-dark">
+      <div className="max-w-7xl mx-auto px-12">
+        <div className="text-center mb-16">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-4xl md:text-5xl font-serif mb-4 italic">Bizning <span className="text-gold not-italic font-bold">Ustalarimiz</span></h2>
+            <div className="h-1 w-20 bg-gold mx-auto mb-6" />
+            <p className="text-white/40 max-w-2xl mx-auto italic font-light">
+              Har bir loyiha ortida ko'p yillik tajribaga ega bo'lgan o'z ishining ustalari turadi.
+            </p>
+          </motion.div>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          {WORKERS.map((worker, index) => (
+            <motion.div
+              key={worker.name}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group"
+            >
+              <div className="relative aspect-[3/4] overflow-hidden border border-white/5 mb-6">
+                <img
+                  src={worker.image}
+                  alt={worker.name}
+                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-105"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-dark/20 group-hover:bg-transparent transition-colors duration-500" />
+                <div className="absolute inset-4 border border-white/10 group-hover:border-gold/30 transition-colors duration-500 pointer-events-none" />
+              </div>
+              <h3 className="text-xl font-serif text-white tracking-widest uppercase mb-1">{worker.name}</h3>
+              <p className="text-gold text-[10px] uppercase tracking-[0.2em] font-medium">{worker.role}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,0 +1,83 @@
+import { motion } from 'motion/react';
+import { Briefcase, DollarSign, PhoneCall, TrendingUp } from 'lucide-react';
+
+export default function Careers() {
+  return (
+    <section id="careers" className="py-24 bg-dark border-y border-white/5 relative overflow-hidden">
+      <div className="absolute top-0 left-0 w-full h-full opacity-5 pointer-events-none">
+         <div className="w-full h-full bg-[radial-gradient(circle_at_center,_var(--color-gold)_1px,_transparent_1px)] bg-[size:100px_100px]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-12 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+          >
+            <span className="text-gold uppercase tracking-[0.3em] text-[10px] mb-4 block">Karyera va Ishga Qabul</span>
+            <h2 className="text-5xl font-serif mb-8 italic">Jamoamizga <span className="text-gold not-italic font-bold">Qo'shiling</span></h2>
+            <p className="text-white/40 text-lg leading-relaxed mb-8 font-light">
+              Biz eng mahoratli va ishiga mas'uliyatli ustalarni taklif qilamiz. Jamoamizda o'z san'atingizni namoyon etish bilan birga, yuqori darajadagi daromadga ega bo'lasiz.
+            </p>
+
+            <div className="mb-10 p-6 bg-gold/5 border border-gold/20 italic text-gold text-sm">
+               "Bizda ustalarning ish haqiga alohida e'tibor qaratiladi – biz sohadagi eng yuqori maoshlardan birini kafolatlaymiz."
+            </div>
+
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              href="tel:+998956607777"
+              className="inline-flex items-center gap-4 bg-gold text-dark px-10 py-5 font-bold uppercase tracking-widest text-xs hover:bg-gold/90 transition-all"
+            >
+              <PhoneCall size={18} />
+              Ishga Kirish
+            </motion.a>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+          >
+            <div className="p-8 bg-steel border-l-2 border-gold/30">
+              <div className="text-gold mb-4">
+                <DollarSign size={32} />
+              </div>
+              <h4 className="font-serif text-xl mb-2">Yuqori Maosh</h4>
+              <p className="text-white/30 text-xs leading-relaxed">Biz ustalarning mehnatini qadrlaymiz va sohadagi eng raqobatbardosh maoshni taklif etamiz.</p>
+            </div>
+
+            <div className="p-8 bg-steel border-l-2 border-gold/30">
+              <div className="text-gold mb-4">
+                <TrendingUp size={32} />
+              </div>
+              <h4 className="font-serif text-xl mb-2">Professional O'sish</h4>
+              <p className="text-white/30 text-xs leading-relaxed">Eng murakkab loyihalar ustida ishlash orqali mahoratingizni yangi bosqichga olib chiqasiz.</p>
+            </div>
+
+            <div className="p-8 bg-black/40 border-l-2 border-white/10 col-span-1 sm:col-span-2">
+              <h4 className="text-white/60 text-[10px] uppercase tracking-[0.2em] mb-4">Ustivorligimiz:</h4>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <li className="flex items-center gap-2 text-gold italic text-sm">
+                   <div className="w-1 h-1 bg-gold rounded-full" /> Doimiy ish hajmi
+                </li>
+                <li className="flex items-center gap-2 text-gold italic text-sm">
+                   <div className="w-1 h-1 bg-gold rounded-full" /> Zamonaviy asbob-uskunalar
+                </li>
+                <li className="flex items-center gap-2 text-gold italic text-sm">
+                   <div className="w-1 h-1 bg-gold rounded-full" /> Sifatli materiallar
+                </li>
+                <li className="flex items-center gap-2 text-gold italic text-sm">
+                   <div className="w-1 h-1 bg-gold rounded-full" /> Ahil jamoa
+                </li>
+              </ul>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}
