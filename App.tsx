@@ -1,4 +1,4 @@
-export default function Footer() {
+export default function App() {
   return (
     <footer className="bg-dark border-t border-white/5 py-12 px-12">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-12">
