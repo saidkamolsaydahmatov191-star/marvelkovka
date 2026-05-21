@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthProvider } from './AuthContext';
 import ProtectedRoute from './ProtectedRoute';
 import AdminLogin from './AdminLogin';
@@ -7,13 +7,10 @@ import App from './App';
 
 export default function AppRoutes() {
   return (
-    <Router>
+    <BrowserRouter>
       <AuthProvider>
         <Routes>
-          {/* Public routes */}
           <Route path="/" element={<App />} />
-          
-          {/* Admin routes */}
           <Route path="/admin/login" element={<AdminLogin />} />
           <Route
             path="/admin/dashboard"
@@ -23,11 +20,8 @@ export default function AppRoutes() {
               </ProtectedRoute>
             }
           />
-          
-          {/* Fallback */}
-          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </AuthProvider>
-    </Router>
+    </BrowserRouter>
   );
 }
