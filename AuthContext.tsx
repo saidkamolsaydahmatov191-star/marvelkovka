@@ -30,12 +30,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   const login = async (username: string, password: string) => {
-    // Simple authentication - in production, this should be done on backend
-    // For now, we'll use a simple hardcoded check
-    if (username === 'admin' && password === 'admin123') {
+    // Validate credentials from environment variables
+    const adminUsername = import.meta.env.VITE_ADMIN_USERNAME || 'admin';
+    const adminPassword = import.meta.env.VITE_ADMIN_PASSWORD || 'admin123';
+    
+    if (username === adminUsername && password === adminPassword) {
       const adminUser: AdminUser = {
         id: '1',
-        username: 'admin',
+        username: adminUsername,
         role: 'admin'
       };
       setUser(adminUser);
